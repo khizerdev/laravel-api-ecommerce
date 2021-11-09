@@ -17,7 +17,7 @@ class ProductController extends Controller
     }
     public function getProduct($slug)
     {
-        $product = Product::where('slug' , $slug)->first();
+        $product = Product::with('reviews')->where('slug' , $slug)->first();
         $category = Category::where('id' , $product->category_id)->select('title','slug')->get();
         $relatedproducts = Product::where('id', '!=', $product->id)->get()->random(4);
 
