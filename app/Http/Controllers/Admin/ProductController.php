@@ -12,7 +12,10 @@ class ProductController extends Controller
 {
     public function getProducts()
     {
-        $products = Product::with('category','subcategory')->get();
+        $products = cache()->remember('product' , 60*60*24 , function() {
+            return Product::with('category','subcategory')->get();
+        });
+      
         return $products;
     }
     public function getProduct($slug)
