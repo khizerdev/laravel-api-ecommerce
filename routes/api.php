@@ -53,3 +53,7 @@ Route::get('/get-featured-products', 'Admin\ProductController@getFeaturedProduct
 Route::get('/get-latest-products', 'Admin\ProductController@getLatestProducts');
 
 Route::get('/get-sliders', 'Admin\SliderController@getSliders');
+
+Route::post('/add-to-cart', 'Admin\CartController@add');
+
+
