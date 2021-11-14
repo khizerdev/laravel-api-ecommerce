@@ -12,21 +12,22 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-        $product = Product::find($request->id);
+        $product = Product::find($request->product_id);
 
         if($product->discount_price == null){
             $total = $product->price*$product->quantity;
         } else {
-            $total = $product->discount_price*$product->quantity;
+            $total = $product->discount_price*$request->quantity;
         }
 
         $cart = Cart::create([
+            'user_id' => $request->user_id,
             'product_id' => $product->id,
             'quantity' => $request->quantity,
             'total' =>$total
         ]);
 
-        return $cart::with('product');
+        return $cart;
     }
 
 }

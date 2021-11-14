@@ -54,6 +54,10 @@ Route::get('/get-latest-products', 'Admin\ProductController@getLatestProducts');
 
 Route::get('/get-sliders', 'Admin\SliderController@getSliders');
 
+Route::post('/add-to-wishlist', 'Admin\WishlistController@store');
+
+
 Route::post('/add-to-cart', 'Admin\CartController@add');
+
 
 
