@@ -56,6 +56,9 @@ Route::get('/get-sliders', 'Admin\SliderController@getSliders');
 
 Route::post('/add-to-wishlist', 'Admin\WishlistController@store');
 
+Route::get('/remove-from-wishlist/{user_id}/{product_id}', 'Admin\WishlistController@delete');
+
+Route::get('/wishlist/{id}', 'Admin\WishlistController@index');
 
 Route::post('/add-to-cart', 'Admin\CartController@add');
 
