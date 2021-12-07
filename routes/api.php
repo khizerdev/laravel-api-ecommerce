@@ -62,5 +62,13 @@ Route::get('/wishlist/{id}', 'Admin\WishlistController@index');
 
 Route::post('/add-to-cart', 'Admin\CartController@add');
 
+Route::get('/remove-from-cart/{user_id}/{product_id}', 'Admin\CartController@remove');
+
+Route::get('/cart/{user_id}', 'Admin\CartController@index');
+
+Route::get('/cart-plus/{user_id}/{product_id}/{quantity}/{price}', 'Admin\CartController@cart_plus');
+
+Route::get('/cart-minus/{user_id}/{product_id}/{quantity}/{price}', 'Admin\CartController@cart_minus');
+
 
 
