@@ -70,5 +70,5 @@ Route::get('/cart-plus/{user_id}/{product_id}/{quantity}/{price}', 'Admin\CartCo
 
 Route::get('/cart-minus/{user_id}/{product_id}/{quantity}/{price}', 'Admin\CartController@cart_minus');
 
-
+Route::post('/order' , 'Admin\OrderController@store');
 
